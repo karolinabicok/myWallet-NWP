@@ -1,0 +1,41 @@
+<div class="container okvir-zeleni w-25 my-3" style="background: white">
+    <h3 class="my-3 display-5">New account info</h3>
+    <form #form="ngForm" (ngSubmit)="addAccount(form)">
+        <div ngModelGroup="accInfo">
+            <div class="row mb-5">
+                <label for="balance" class="col-form-label w-50">Base balance:</label>
+                <div class="w-50">
+                    <input type="number" class="form-control" required min="1" ngModel #balance="ngModel" name="balance">
+                    <div class="error" *ngIf="balance.invalid && balance.dirty">
+                        <div *ngIf="balance.errors?.['required']">
+                            <b>Base balance is required and cannot be less than 1.</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <label class="col-sm-6 col-form-label ">Currency:</label>
+                <div class="col-sm-6 ">
+                    <select class="form-control " name="currency" ngModel #currency="ngModel" required>
+                <option *ngFor="let currency of currencies " [value]="currency ">{{currency}}</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <label class="col-sm-6 col-form-label ">Type:</label>
+                <div class="col-sm-6 ">
+                    <select class="form-control " name="type" ngModel #type="ngModel" required>
+                <option *ngFor="let type of types " [value]="type ">{{type}}</option>
+                </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-outline-success col-sm-12">Add</button>
+            <div class="error" style="margin-top: 10px; text-align: center;">
+                <b>{{message}}</b>
+            </div>
+        </div>
+    </form>
+</div>

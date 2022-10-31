@@ -1,0 +1,16 @@
+<div class="card border-success m-3 d-inline-flex" style="max-width: 18rem;">
+    <div class="card-header">Account ID: {{account.id}}</div>
+    <div class="card-body">
+        <h5 class="card-title">Balance: {{account.balance}} {{account.currency}}</h5>
+        <p class="card-text">Type: {{account.type}}</p>
+        <span>
+            <button class="btn btn-sm px-4 m-1 btn-outline-success" (click)="changeBalance()">Update balance</button>
+        </span>
+        <span>
+            <button class="btn btn-sm px-4 m-1 btn-outline-danger" (click)="delete()">Delete</button>
+        </span>
+        <span>
+            <button class="btn btn-sm px-4 m-1 btn-outline-info" (click)="addNote()">Add note</button>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<td class="col">
+    {{unit.id}}</td>
+<td class="col" [class]=" unit.isExpense ? 'error' : 'success' "><b>{{unit.isExpense ? '-' : '+'}}{{unit.change}}</b></td>
+<td class="col ">{{unit.category}}</td>
+<td class="col ">{{unit.description}}</td>
+<td class="col ">{{unit.date}}</td>

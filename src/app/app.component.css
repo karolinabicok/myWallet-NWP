@@ -1,0 +1,17 @@
+.btn-style {
+    background: #74C69D;
+    border: none;
+}
+
+a:hover {
+    color: white;
+}
+
+a {
+    display: inline-flex;
+    margin-right: 20px;
+}
+
+mat-icon {
+    margin-right: 10px;
+}

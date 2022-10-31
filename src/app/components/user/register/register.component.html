@@ -1,0 +1,39 @@
+<section class="vh-100 bg-image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5 display-6">Create an account</h2>
+                            <h4 class="lead">Please enter your info:</h4><br>
+                            <form (ngSubmit)="register(registerForm)" #registerForm="ngForm">
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" class="form-control form-control-lg" id="form3Example1cg" placeholder="Your name" required name="name" #nameField="ngModel" [(ngModel)]="name">
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Username" required name="username" #usernameField="ngModel" [(ngModel)]="username">
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" placeholder="Password" required name="password" #passwordField="ngModel" [(ngModel)]="password" />
+                                </div>
+                                <p>{{message}}</p>
+                                <div class="d-flex justify-content-center mb-4 form-outline">
+
+                                    <input type="submit" class="btn btn-lg px-4 btn-outline-success" value="Register" />
+                                </div>
+
+                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="/login" routerLinkActive="active" class="fw-bold text-body"><u>Login here</u></a></p>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

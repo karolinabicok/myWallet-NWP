@@ -1,0 +1,22 @@
+<div class="container okvir w-50 my-3" style="background: white;">
+    <h1 class="my-3 display-5">Add new note</h1>
+    <form #form="ngForm" (ngSubmit)="addNote(form)">
+        <div ngModelGroup="noteInfo">
+            <div class="row mb-3 ">
+                <h4>Date: {{today}}</h4>
+                <p>Account ID: {{accId}}</p>
+            </div>
+            <div class="row mb-5 ">
+                <div class="col-sm-12">
+                    <textarea type="text" required placeholder="Your note" class="form-control" name="text" rows="6" ngModel #text="ngModel" value="text"></textarea>
+                </div>
+            </div>
+            <button type="submit " class="btn btn-outline-dark col-sm-12">Add note</button>
+            <div class="error" style="margin-top: 10px; text-align: center;">
+                <b>{{message}}</b>
+            </div>
+        </div>
+    </form>
+    <h3 [class]="success.startsWith('E') ? 'error text-center' : 'success text-center'"><b>{{success}}</b>
+    </h3>
+</div>
