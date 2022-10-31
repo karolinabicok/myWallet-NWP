@@ -1,0 +1,53 @@
+<div class="container okvir-zeleni w-50 my-3 p-4" style="background: white;">
+    <h1 class="my-3 display-5">Change balance</h1>
+    <form #form="ngForm" (ngSubmit)="changeBalance(form)">
+        <div ngModelGroup="changeInfo">
+            <div class="row mb-5">
+                <label for="change" class="col-form-label w-50">New change:</label>
+                <div class="w-50">
+                    <input type="number" class="form-control" required min="1" ngModel #change="ngModel" name="change">
+                    <div class="error" *ngIf="change.invalid && change.dirty">
+                        <div *ngIf="change.errors?.['required']">
+                            <b>Change is required and cannot be less than 1.</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <fieldset class="row mb-5">
+                <legend class="col-form-label col-sm-6 pt-0">Is expense?</legend>
+                <div class="col-sm-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="isExpense" value="true" ngModel #isExpense="ngModel">
+                        <label class="form-check-label" for="true">
+              YES
+            </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="isExpense" value="false" ngModel #isExpense="ngModel">
+                        <label class="form-check-label " for="false">
+              NO
+            </label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="row mb-5">
+                <label class="col-sm-6 col-form-label ">Category:</label>
+                <div class="col-sm-6 ">
+                    <select class="form-control " name="category" ngModel #category="ngModel" required>
+                <option *ngFor="let category of categories " [value]="category ">{{category}}</option>
+                </select>
+                </div>
+            </div>
+            <div class="row mb-5 ">
+                <label class="col-sm-6 col-form-label ">Description:</label>
+                <div class="col-sm-6 ">
+                    <textarea type="text " class="form-control" name="description" ngModel #description="ngModel" maxlength="50"></textarea>
+                </div>
+            </div>
+            <button type="submit " class="btn btn-outline-success col-sm-12">Change balance</button>
+            <div class="error" style="margin-top: 10px; text-align: center;">
+                <b>{{message}}</b>
+            </div>
+        </div>
+    </form>
+</div>

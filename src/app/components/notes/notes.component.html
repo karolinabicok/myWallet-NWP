@@ -1,0 +1,4 @@
+<div class="container">
+    <h2 class="text-center my-3 white display-2">Your notes</h2>
+    <app-note-card [note]="note" *ngFor="let note of notes$| async"></app-note-card>
+</div>
